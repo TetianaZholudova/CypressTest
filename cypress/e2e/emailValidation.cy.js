@@ -10,13 +10,19 @@ describe('Email validation', () => {
     })
 
 it('should show "Email required" when the email field is empty', ()=> {
-    registrationPage.getSignupEmail().click();
-    registrationPageStepsEmailField.leaveEmailFieldEmpty()
+    registrationPage.getSignupEmail().focus().blur();
+    registrationPageStepsEmailField.verifyRegistrationButtonIsDisabled(); 
+    registrationPageStepsEmailField.validateEmailIsRequeredMessage()
+
 })
-  
+
 it('should show "Email is incorrect" when the username contains wrong data', ()=> {
-    registrationPage.getSignupEmail().type('tanya.zhol.gmail.com');
-    registrationPageStepsEmailField.enterIncorrectEmail()        
+    registrationPage.getSignupEmail().type('tanya.gmail.com');
+    registrationPageStepsEmailField.verifyRegistrationButtonIsDisabled(); 
+    registrationPage.getRegisterButton().click({force: true})
+    registrationPageStepsEmailField.validateEmailIsIncorrectMessage()
+    
 })
+
 })
     
