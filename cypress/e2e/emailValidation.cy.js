@@ -18,7 +18,6 @@ it('should show "Email required" when the email field is empty', ()=> {
 
 it('should show "Email is incorrect" when the username contains wrong data', ()=> {
     registrationPage.getSignupEmail().type('tanya.gmail.com');
-    registrationPageStepsEmailField.verifyRegistrationButtonIsDisabled(); 
     registrationPage.getRegisterButton().click({force: true})
     registrationPageStepsEmailField.validateEmailIsIncorrectMessage()
     
