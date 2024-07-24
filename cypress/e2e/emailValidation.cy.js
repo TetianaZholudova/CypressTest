@@ -4,7 +4,7 @@ import registrationPageStepsEmailField from '../support/steps/registrationPageSt
 describe('Email validation', () => {
     beforeEach(() => {
     
-      cy.visit('/')
+      cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/')
       cy.get('.hero-descriptor_btn').click()
   
     })
